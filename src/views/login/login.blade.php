@@ -4,7 +4,7 @@
 
 @section('content')
 <h2>Datos de validación</h2>
-<form method="POST" action="/login">
+<form method="POST" action="{{$router->generate('validate')}}">
   <div class="mb-3">
     <label for="exampleInputName1" class="form-label">Usuario</label>
     <input type="text" class="form-control" id="exampleInputName1" aria-describedby="nameHelp" name="name">

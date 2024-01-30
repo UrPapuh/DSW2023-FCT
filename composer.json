@@ -5,12 +5,12 @@
     "license": "GNU/GPL",
     "autoload": {
         "psr-4": {
-            "Dsw\\Fct\\": "src/"
+            "DSW\\FCT\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Andrés"
+            "name": "UrPapuh"
         }
     ],
     "require": {

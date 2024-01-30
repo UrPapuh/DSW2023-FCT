@@ -3,7 +3,4 @@ namespace DSW\FCT\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model 
-{
- // protected $table = 'users';
-}
+class Company extends Model {}

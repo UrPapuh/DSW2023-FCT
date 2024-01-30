@@ -1,11 +1,10 @@
 <?php
-namespace Dsw\Fct\Controllers;
+namespace DSW\FCT\Controllers;
 
-class defaultController
+class defaultController extends controller
 {
   public function home() {
-    global $blade;    
-    global $router;
-    echo $blade->make('home', compact('router'))->render();
+    $router = $this->router;
+    echo $this->blade->make('home', compact('router'))->render();
   }
 }

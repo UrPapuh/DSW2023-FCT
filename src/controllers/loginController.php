@@ -1,16 +1,15 @@
 <?php
-namespace Dsw\Fct\Controllers;
+namespace DSW\FCT\Controllers;
 
 require_once('../src/connection.php');
 
-use Dsw\Fct\models\User;
+use DSW\FCT\models\User;
 
-class loginController
+class loginController extends controller
 {
   public function login() {
-   global $blade;
-   global $router;
-   echo $blade->make('login.login', compact('router'))->render(); 
+    $router = $this->router;
+    echo $this->blade->make('login.login', compact('router'))->render(); 
   }
 
   public function validate() {
@@ -22,14 +21,14 @@ class loginController
       $_SESSION['id'] = $user->id;
       $_SESSION['name'] = $user->name;
       $_SESSION['profesor'] = $user->profesor;
-      header('Location: /');
+      header("Location: {$this->router->generate('home')}");  
     } else {
-      header('Location: /login');  
+      header("Location: {$this->router->generate('login')}");
     }
   }
 
   public function logout() {
     session_destroy();
-    header('Location: /');
+    header("Location: {$this->router->generate('home')}");  
   }
 }

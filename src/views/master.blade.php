@@ -20,14 +20,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="{{$router->generate('home')}}">Inicio</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Empresas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Elección de los Alumnos</a>
-            </li>
+            @if(isset($_SESSION['name']))
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{{$router->generate('company_list')}}">Empresas</a>
+              </li>
+              @if($_SESSION['profesor'])
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="{{$router->generate('choice_list')}}">Elección de los Alumnos</a>
+                </li>
+              @endif
+            @endif
           </ul>
           @if (isset($_SESSION['name']))
           <form class="d-flex" method="POST" action="#">
@@ -35,9 +39,9 @@
             <button class="btn btn-outline-success" type="submit">Buscar</button>
           </form>
             <span class="mx-2">Hola, {{$_SESSION['name']}}</span>
-            <a href="/logout" class="btn btn-warning mx-2">Logout</a>
+            <a href="{{$router->generate('logout')}}" class="btn btn-warning mx-2">Logout</a>
           @else
-            <a href="/login" class="btn btn-primary mx-2">Login</a>            
+            <a href="{{$router->generate('login')}}" class="btn btn-primary mx-2">Login</a>            
           @endif
         </div>
       </div>

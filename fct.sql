@@ -1,4 +1,4 @@
--- Active: 1700668305200@@127.0.0.1@3306@pruebalaravel
+-- Active: 1700591690136@@127.0.0.1@3306
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -58,7 +58,7 @@ INSERT INTO `companies` (`id`, `name`, `url`, `mode`, `description`, `created_at
 (10, 'Blue Grow', 'https://thebluegrow.com/', 'online', 'Presencia Web y posicionamiento. Estrategias de marketing. Wordpress / Elementor / Plugins\r\nSEO y marketing Diseño web.\r\n', '2024-01-30 13:16:30', '2024-01-30 13:16:30'),
 (11, 'Nexo365', 'https://nexo365.com', 'presencial', 'Instalación y mantenimiento de alarmas, seguridad, TPV. Desarrollo de App propia (CRM)\r\n', '2024-01-30 13:17:58', '2024-01-30 13:17:58'),
 (12, 'Turitop', 'https://www.turitop.com/es/', 'online', 'Presencia Web y posicionamiento. Gestión de reserva de eventos. Wordpress / Módulos propios\r\n', '2024-01-30 13:17:58', '2024-01-30 13:17:58'),
-(12, 'Telepizza', 'https://www.telepizza.es/', 'presencial', 'Dedicada a la realización de pizza y servicio a domicilio. Su secreto está en la masa.\r\n', '2024-01-30 13:17:58', '2024-01-30 13:17:58');
+(13, 'Telepizza', 'https://www.telepizza.es/', 'presencial', 'Dedicada a la realización de pizza y servicio a domicilio. Su secreto está en la masa.\r\n', '2024-01-30 13:17:58', '2024-01-30 13:17:58');
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,7 @@ INSERT INTO `users` (`id`, `name`, `password`, `profesor`, `created_at`, `update
 --
 INSERT INTO `choices` VALUES 
 (1,12,2,'2024-01-30 09:50:30','2024-01-30 09:50:30'),
-(2,12,2,'2024-01-30 09:50:30','2024-01-30 09:50:30'),
+(2,12,3,'2024-01-30 09:50:30','2024-01-30 09:50:30'),
 (3,3,1,'2024-01-30 09:51:55','2024-01-30 09:51:55'),
 (4,17,1,'2024-01-30 09:58:04','2024-01-30 09:58:04'),
 (5,17,2,'2024-01-30 09:58:06','2024-01-30 09:58:06'),
@@ -149,7 +149,7 @@ ALTER TABLE `choices`
 -- AUTO_INCREMENT de la tabla `companies`
 --
 ALTER TABLE `companies`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
