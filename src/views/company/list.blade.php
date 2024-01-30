@@ -13,7 +13,9 @@
         <th scope="col">Name</th>
         <th scope="col">Mode</th>
         <th scope="col">Description</th>
+        @if($_SESSION['profesor'])
         <th>Actions</th>
+        @endif
       </tr>
     </thead>
     <tbody>
@@ -25,10 +27,12 @@
         </td>
         <td>{{ $company->mode }}</td>
         <td>{{ $company->description }}</td>
+        @if($_SESSION['profesor'])
         <td>
           <a href="{{$router->generate('company_delete', ['id' => $company->id])}}" class="btn btn-danger">Delete</a>
           <a href="{{$router->generate('company_edit', ['id' => $company->id])}}" class="btn btn-warning">Edit</a>
         </td>
+        @endif
       </tr>
       @endforeach
     </tbody>
